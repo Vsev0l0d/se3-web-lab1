@@ -1,0 +1,17 @@
+#area:hover{
+    opacity:0;
+}
+
+@keyframes show{
+    0%{
+        opacity:0;
+    }
+    100% {
+        opacity:1;
+    }
+}
+
+.content:not(:first-child){
+    animation: show 2s 1;
+    animation-fill-mode: forwards;
+}

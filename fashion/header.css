@@ -1,0 +1,17 @@
+.header{
+    padding: 20px;
+    font-family: sans-serif;
+    letter-spacing: 1px;
+    background-color:#D8E6F3;
+    font-size: 24px;
+    margin-bottom: 16px;
+}
+
+.header .name{
+    float: right;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+}
