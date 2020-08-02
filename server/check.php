@@ -3,7 +3,7 @@
 function checkArea($x, $y, $r){
     if (($x <= $r && $x >= 0 && $y <= $r && $y >= 0) ||
         ($y <= ($x + $r) && $y >= 0 && $x <= 0) ||
-        (($x*$x + $y*$y) <= $r*$r/4 && $x <= 0 && $y <= 0)){
+        (($x*$x + $y*$y) <= $r*$r && $x <= 0 && $y <= 0)){
         return "<span style='color: green'>True</span>";
     } else {
         return "<span style='color: red'>False</span>";
