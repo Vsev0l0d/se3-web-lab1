@@ -4,7 +4,11 @@ let
     X_group = document.getElementsByName("x-group")
 
 function checkY() {
-    if (!isFinite(Y.value)){
+    Y = document.getElementById('y-value-select')
+    if (Y.value.trim() === ""){
+        Y.setCustomValidity("Заполните поле");
+        return false
+    } else if (!isFinite(Y.value)){
         Y.setCustomValidity("Должно быть числом");
         return false
     } else if (Y.value >= 5 || Y.value <= -3){
@@ -14,7 +18,11 @@ function checkY() {
 }
 
 function checkR() {
-    if (!isFinite(R.value)){
+    R = document.getElementById("r-value-select")
+    if (R.value.trim() === ""){
+        R.setCustomValidity("Заполните поле");
+        return false
+    } else if (!isFinite(R.value)){
         R.setCustomValidity("Должно быть числом");
         return false
     } else if (R.value >= 5 || R.value <= 2){
