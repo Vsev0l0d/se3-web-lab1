@@ -11,7 +11,7 @@
     }
 }
 
-.content:not(:first-child){
+.content{
     animation: show 2s 1;
     animation-fill-mode: forwards;
 }
