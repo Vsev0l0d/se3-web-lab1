@@ -4,7 +4,6 @@ let
     X_group = document.getElementsByName("x-group")
 
 function checkY() {
-    Y = document.getElementById('y-value-select')
     if (Y.value.trim() === ""){
         Y.setCustomValidity("Заполните поле");
         return false
@@ -14,11 +13,13 @@ function checkY() {
     } else if (Y.value >= 5 || Y.value <= -3){
         Y.setCustomValidity("Должно быть в диапазоне (-3; 5)");
         return false
-    } else return true
+    } else {
+        Y.setCustomValidity("")
+        return true
+    }
 }
 
 function checkR() {
-    R = document.getElementById("r-value-select")
     if (R.value.trim() === ""){
         R.setCustomValidity("Заполните поле");
         return false
@@ -28,7 +29,10 @@ function checkR() {
     } else if (R.value >= 5 || R.value <= 2){
         R.setCustomValidity("Должно быть в диапазоне (2; 5)");
         return false
-    } else return true
+    } else {
+        R.setCustomValidity("")
+        return true
+    }
 }
 
 const submit = function(e) {
