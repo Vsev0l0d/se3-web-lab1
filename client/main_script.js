@@ -13,10 +13,7 @@ function checkY() {
     } else if (Y.value >= 5 || Y.value <= -3){
         Y.setCustomValidity("Должно быть в диапазоне (-3; 5)");
         return false
-    } else {
-        Y.setCustomValidity("")
-        return true
-    }
+    } else return true
 }
 
 function checkR() {
@@ -29,10 +26,7 @@ function checkR() {
     } else if (R.value >= 5 || R.value <= 2){
         R.setCustomValidity("Должно быть в диапазоне (2; 5)");
         return false
-    } else {
-        R.setCustomValidity("")
-        return true
-    }
+    } else return true
 }
 
 const submit = function(e) {
