@@ -4,26 +4,28 @@ let
     X_group = document.getElementsByName("x-group")
 
 function checkY() {
-    if (Y.value.trim() === ""){
+    let y = Y.value.trim().replace(",", ".")
+    if (y === ""){
         Y.setCustomValidity("Заполните поле");
         return false
-    } else if (!isFinite(Y.value)){
+    } else if (!isFinite(y)){
         Y.setCustomValidity("Должно быть числом");
         return false
-    } else if (Y.value >= 5 || Y.value <= -3){
+    } else if (y >= 5 || y <= -3){
         Y.setCustomValidity("Должно быть в диапазоне (-3; 5)");
         return false
     } else return true
 }
 
 function checkR() {
-    if (R.value.trim() === ""){
+    let r = R.value.trim().replace(",", ".")
+    if (r === ""){
         R.setCustomValidity("Заполните поле");
         return false
-    } else if (!isFinite(R.value)){
+    } else if (!isFinite(r)){
         R.setCustomValidity("Должно быть числом");
         return false
-    } else if (R.value >= 5 || R.value <= 2){
+    } else if (r >= 5 || r <= 2){
         R.setCustomValidity("Должно быть в диапазоне (2; 5)");
         return false
     } else return true
@@ -42,8 +44,8 @@ const submit = function(e) {
         }
     }
     formData.append("x_value", xValue);
-    formData.append('y_value', Y.value);
-    formData.append('r_value', R.value);
+    formData.append('y_value', Y.value.replace(",", "."));
+    formData.append('r_value', R.value.replace(",", "."));
 
     let xhr = new XMLHttpRequest();
     xhr.open('POST', 'server/check.php')
