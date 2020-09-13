@@ -8,7 +8,7 @@ function checkY() {
     if (y === ""){
         Y.setCustomValidity("Заполните поле");
         return false
-    } else if (!isFinite(y)){
+    } else if (!isFinite(y) || y === "-0"){
         Y.setCustomValidity("Должно быть числом");
         return false
     } else if (y >= 5 || y <= -3){
@@ -22,7 +22,7 @@ function checkR() {
     if (r === ""){
         R.setCustomValidity("Заполните поле");
         return false
-    } else if (!isFinite(r)){
+    } else if (!isFinite(r) || r === "-0"){
         R.setCustomValidity("Должно быть числом");
         return false
     } else if (r >= 5 || r <= 2){
