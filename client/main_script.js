@@ -78,4 +78,14 @@ const clear = function(e) {
 
 document.addEventListener('DOMContentLoaded', function(){
     document.getElementById('clearButton').addEventListener('click', clear);
+
+    let xhr = new XMLHttpRequest();
+    xhr.open('GET', 'server/table.php')
+
+    xhr.onreadystatechange = function (){
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            document.getElementById("ans").innerHTML = xhr.responseText
+        }
+    }
+    xhr.send()
 });
